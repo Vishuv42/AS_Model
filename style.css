@@ -31,8 +31,7 @@ body {
 
 .top-bar {
     width: 100%;
-    height: 34px;
-
+    min-height: 34px;
     background: #173b66;
     color: #ffffff;
 
@@ -43,8 +42,8 @@ body {
 .top-container {
     width: 100%;
     max-width: 1200px;
-
     margin: auto;
+
     padding: 7px 20px;
 
     display: flex;
@@ -54,6 +53,14 @@ body {
     gap: 60px;
 
     font-size: 13px;
+}
+
+.top-item {
+    white-space: nowrap;
+}
+
+.top-item i {
+    margin-right: 6px;
 }
 
 
@@ -158,7 +165,6 @@ header {
 
 /* =====================================================
    MENU BUTTON
-   Hidden on desktop
 ===================================================== */
 
 .menu-button {
@@ -176,7 +182,7 @@ header {
 
 
 /* =====================================================
-   HERO SECTION
+   HERO
 ===================================================== */
 
 .hero {
@@ -216,17 +222,12 @@ header {
 
     object-fit: cover;
 
-    /*
-       Building position.
-       Higher percentage moves image upward,
-       allowing more lower part of building to show.
-    */
     object-position: center 72%;
 }
 
 
 /* =====================================================
-   HERO BLUE OVERLAY
+   HERO OVERLAY
 ===================================================== */
 
 .hero::after {
@@ -275,11 +276,6 @@ header {
     color: #ffffff;
 }
 
-
-/* =====================================================
-   HERO LABEL
-===================================================== */
-
 .hero-label {
     font-size: 14px;
 
@@ -291,11 +287,6 @@ header {
 
     color: #ffffff;
 }
-
-
-/* =====================================================
-   HERO TITLE
-===================================================== */
 
 .hero-content h2 {
     font-size: 62px;
@@ -311,11 +302,6 @@ header {
     color: #f7b52c;
 }
 
-
-/* =====================================================
-   HERO TAGLINE
-===================================================== */
-
 .hero-content h3 {
     font-size: 28px;
 
@@ -325,11 +311,6 @@ header {
 
     color: #ffffff;
 }
-
-
-/* =====================================================
-   HERO DESCRIPTION
-===================================================== */
 
 .hero-description {
     font-size: 19px;
@@ -374,9 +355,7 @@ header {
 }
 
 
-/* =====================================================
-   ADMISSION BUTTON
-===================================================== */
+/* Admission */
 
 .admission-btn {
     background: #f7b52c;
@@ -393,9 +372,7 @@ header {
 }
 
 
-/* =====================================================
-   EXPLORE BUTTON
-===================================================== */
+/* Explore */
 
 .explore-btn {
     background: transparent;
@@ -421,7 +398,7 @@ header {
 
     display: grid;
 
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 
     background: #ffffff;
 
@@ -444,6 +421,8 @@ header {
 
 .feature-icon {
     font-size: 30px;
+
+    color: #173b66;
 
     margin-bottom: 10px;
 }
@@ -483,28 +462,6 @@ header {
     background: #f5f8fc;
 }
 
-
-/* =====================================================
-   SECTION LABEL
-===================================================== */
-
-.section-label {
-    color: #d99a18;
-
-    font-size: 12px;
-
-    font-weight: 700;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 12px;
-}
-
-
-/* =====================================================
-   SECTION HEADINGS
-===================================================== */
-
 .simple-section h2 {
     font-size: 36px;
 
@@ -525,482 +482,188 @@ header {
 
 
 /* =====================================================
-   FACILITIES
+   SECTION LABEL
 ===================================================== */
 
-.facility-list {
-    display: flex;
+.section-label {
+    color: #d99a18;
 
-    justify-content: center;
+    font-size: 12px;
 
-    gap: 25px;
+    font-weight: 700;
 
-    margin-top: 35px;
-}
+    letter-spacing: 4px;
 
-.facility-list div {
-    padding: 25px 40px;
-
-    background: #ffffff;
-
-    border-radius: 8px;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-
-    font-weight: 600;
-
-    color: #173b66;
+    margin-bottom: 12px;
 }
 
 
 /* =====================================================
-   GALLERY
-===================================================== */
-
-.gallery-preview {
-    max-width: 850px;
-
-    margin: 35px auto 0;
-
-    overflow: hidden;
-
-    border-radius: 8px;
-}
-
-.gallery-preview img {
-    width: 100%;
-
-    display: block;
-
-    object-fit: cover;
-}
-
-
-/* =====================================================
-   GALLERY GRID
-===================================================== */
-
-.gallery-grid {
-    max-width: 1100px;
-
-    margin: 40px auto 0;
-
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 20px;
-}
-
-.gallery-grid img {
-    width: 100%;
-    height: 240px;
-
-    object-fit: cover;
-
-    display: block;
-
-    border-radius: 8px;
-
-    transition: all 0.3s ease;
-}
-
-.gallery-grid img:hover {
-    transform: scale(1.02);
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    background: #173b66;
-
-    color: #ffffff;
-
-    text-align: center;
-
-    padding: 25px;
-}
-
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1000px) {
-
-    .navbar {
-        padding: 10px 20px;
-    }
-
-    .nav-links {
-        gap: 18px;
-    }
-
-    .nav-links a {
-        font-size: 14px;
-    }
-
-    .school-name h1 {
-        font-size: 26px;
-    }
-
-    .hero-content h2 {
-        font-size: 52px;
-    }
-
-    .hero-content h3 {
-        font-size: 24px;
-    }
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-    /* TOP BAR */
-
-    .top-container {
-        padding: 0 12px;
-
-        font-size: 11px;
-    }
-
-
-    /* HEADER */
-
-    .navbar {
-        min-height: auto;
-
-        padding: 15px;
-
-        flex-direction: row;
-
-        gap: 10px;
-    }
-
-    .school-logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .school-name h1 {
-        font-size: 22px;
-    }
-
-    .school-name p {
-        font-size: 12px;
-    }
-
-
-    /* MOBILE MENU BUTTON */
-
-    .menu-button {
-        display: block;
-
-        margin-left: auto;
-    }
-
-
-    /* NAVIGATION */
-
-    .nav-links {
-        display: none;
-
-        width: 100%;
-
-        flex-direction: column;
-
-        align-items: center;
-
-        gap: 15px;
-
-        padding: 15px 0;
-    }
-
-    .nav-links.show {
-        display: flex;
-    }
-
-
-    /* HERO */
-
-    .hero {
-        height: 650px;
-    }
-
-    .hero-image img {
-        object-position: center center;
-    }
-
-    .hero::after {
-        background: linear-gradient(
-            90deg,
-            rgba(18, 59, 101, 0.94),
-            rgba(22, 65, 109, 0.70)
-        );
-    }
-
-    .hero-content {
-        padding: 35px 25px;
-    }
-
-    .hero-label {
-        font-size: 11px;
-
-        letter-spacing: 3px;
-    }
-
-    .hero-content h2 {
-        font-size: 40px;
-    }
-
-    .hero-content h3 {
-        font-size: 21px;
-    }
-
-    .hero-description {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-
-        width: 100%;
-    }
-
-    .hero-buttons .btn {
-        width: 100%;
-    }
-
-
-    /* FEATURES */
-
-    .features {
-        grid-template-columns: 1fr;
-
-        padding: 25px 20px;
-    }
-
-    .feature {
-        border-right: none;
-
-        border-bottom: 1px solid #e4e8ed;
-
-        padding: 20px;
-    }
-
-    .feature:last-child {
-        border-bottom: none;
-    }
-
-
-    /* GENERAL SECTIONS */
-
-    .simple-section {
-        min-height: 350px;
-
-        padding: 65px 25px;
-    }
-
-    .simple-section h2 {
-        font-size: 30px;
-    }
-
-
-    /* FACILITIES */
-
-    .facility-list {
-        flex-direction: column;
-
-        gap: 15px;
-    }
-
-
-    /* GALLERY */
-
-    .gallery-grid {
-        grid-template-columns: 1fr;
-
-        gap: 15px;
-    }
-
-    .gallery-grid img {
-        height: 220px;
-    }
-}
-
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
-@media (max-width: 480px) {
-
-    .school-name h1 {
-        font-size: 19px;
-    }
-
-    .school-name p {
-        font-size: 11px;
-    }
-
-    .school-logo {
-        width: 55px;
-        height: 55px;
-    }
-
-    .hero {
-        height: 600px;
-    }
-
-    .hero-content h2 {
-        font-size: 34px;
-    }
-
-    .hero-content h3 {
-        font-size: 19px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-    .simple-section h2 {
-        font-size: 27px;
-    }
-}
-/* =====================================================
-   ABOUT US SECTION
+   ABOUT US
 ===================================================== */
 
 .about-section {
     width: 100%;
+
     background: #ffffff;
+
     padding: 90px 20px;
 }
 
 .about-container {
     max-width: 1200px;
+
     margin: auto;
 }
 
 
-/* ABOUT HEADING */
+/* About Heading */
 
 .about-heading {
     text-align: center;
+
     margin-bottom: 55px;
 }
 
 .about-heading h2 {
     font-size: 40px;
+
     color: #173b66;
+
     margin-bottom: 15px;
 }
 
 .heading-line {
     width: 60px;
+
     height: 3px;
+
     background: #f7b52c;
+
     margin: auto;
 }
 
 
-/* ABOUT CONTENT */
+/* About Content */
 
 .about-content {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 55px;
+
     align-items: center;
 }
 
 .about-text {
     color: #60758f;
+
     font-size: 16px;
+
     line-height: 1.8;
 }
 
 .about-intro {
     font-size: 18px;
+
     color: #3e5873;
+
     margin-bottom: 20px;
 }
 
 
-/* ABOUT IMAGE */
+/* About Image */
 
 .about-image {
     width: 100%;
+
     overflow: hidden;
+
     border-radius: 8px;
 }
 
 .about-image img {
     width: 100%;
+
     height: 380px;
+
     display: block;
+
     object-fit: cover;
 }
 
 
-/* MISSION */
+/* =====================================================
+   MISSION
+===================================================== */
 
 .mission-section {
     margin-top: 90px;
+
     padding: 65px;
+
     background: #f5f8fc;
+
     border-left: 4px solid #f7b52c;
 }
 
 .mission-content h3 {
     font-size: 30px;
+
     color: #173b66;
+
     margin-bottom: 35px;
 }
 
 .mission-list {
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     gap: 25px 45px;
 }
 
 .mission-item {
     display: flex;
+
     gap: 18px;
+
     align-items: flex-start;
 }
 
 .mission-number {
     min-width: 42px;
+
     height: 42px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #173b66;
+
     color: #ffffff;
 
     border-radius: 50%;
 
     font-size: 13px;
+
     font-weight: 700;
 }
 
 .mission-item p {
     color: #60758f;
+
     line-height: 1.7;
 }
 
 
-/* WHY CHOOSE US */
+/* =====================================================
+   WHY CHOOSE US
+===================================================== */
 
 .why-school {
     margin-top: 90px;
@@ -1008,20 +671,21 @@ footer {
 
 .why-heading {
     text-align: center;
+
     margin-bottom: 45px;
 }
 
 .why-heading h3 {
     font-size: 30px;
+
     color: #173b66;
 }
 
-
-/* WHY GRID */
-
 .why-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
@@ -1047,12 +711,15 @@ footer {
 
 .why-icon {
     width: 55px;
+
     height: 55px;
 
     margin: 0 auto 18px;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: #eef4fa;
@@ -1066,6 +733,7 @@ footer {
 
 .why-card h4 {
     font-size: 18px;
+
     color: #173b66;
 
     margin-bottom: 10px;
@@ -1081,56 +749,7 @@ footer {
 
 
 /* =====================================================
-   ABOUT RESPONSIVE
-===================================================== */
-
-@media (max-width: 768px) {
-
-    .about-section {
-        padding: 65px 20px;
-    }
-
-    .about-heading h2 {
-        font-size: 30px;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 35px;
-    }
-
-    .about-image img {
-        height: 280px;
-    }
-
-    .mission-section {
-        margin-top: 60px;
-        padding: 35px 25px;
-    }
-
-    .mission-content h3 {
-        font-size: 25px;
-    }
-
-    .mission-list {
-        grid-template-columns: 1fr;
-        gap: 25px;
-    }
-
-    .why-school {
-        margin-top: 60px;
-    }
-
-    .why-heading h3 {
-        font-size: 25px;
-    }
-
-    .why-grid {
-        grid-template-columns: 1fr;
-    }
-}
-/* =====================================================
-   ACADEMICS SECTION
+   ACADEMICS
 ===================================================== */
 
 .academics-section {
@@ -1148,9 +767,7 @@ footer {
 }
 
 
-/* =====================================================
-   ACADEMICS HEADING
-===================================================== */
+/* Academics Heading */
 
 .academics-heading {
     max-width: 800px;
@@ -1184,9 +801,9 @@ footer {
 .academic-overview {
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr));
 
-    gap: 25px;
+    gap: 20px;
 
     margin-bottom: 80px;
 }
@@ -1278,79 +895,6 @@ footer {
 
 
 /* =====================================================
-   STREAMS
-===================================================== */
-
-.streams-section {
-    margin-bottom: 85px;
-}
-
-.streams-grid {
-    display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
-    gap: 25px;
-}
-
-.stream-card {
-    background: #ffffff;
-
-    padding: 40px 25px;
-
-    text-align: center;
-
-    border-radius: 8px;
-
-    border: 1px solid #e3e9ef;
-
-    transition: all 0.3s ease;
-}
-
-.stream-card:hover {
-    transform: translateY(-5px);
-
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
-}
-
-.stream-icon {
-    width: 65px;
-
-    height: 65px;
-
-    margin: 0 auto 20px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    background: #173b66;
-
-    color: #ffffff;
-
-    border-radius: 50%;
-
-    font-size: 24px;
-}
-
-.stream-card h4 {
-    font-size: 21px;
-
-    color: #173b66;
-
-    margin-bottom: 8px;
-}
-
-.stream-card p {
-    color: #718096;
-
-    font-size: 14px;
-}
-
-
-/* =====================================================
    EXAMINATION SYSTEM
 ===================================================== */
 
@@ -1361,9 +905,9 @@ footer {
 .examination-grid {
     display: grid;
 
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 15px;
+    gap: 20px;
 }
 
 .exam-item {
@@ -1422,102 +966,44 @@ footer {
 
 
 /* =====================================================
-   ACADEMICS RESPONSIVE
+   FACILITIES
 ===================================================== */
-
-@media (max-width: 900px) {
-
-    .academic-overview {
-        grid-template-columns: 1fr;
-    }
-
-    .streams-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .examination-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-@media (max-width: 768px) {
-
-    .academics-section {
-        padding: 65px 20px;
-    }
-
-    .academics-heading h2 {
-        font-size: 30px;
-    }
-
-    .subsection-heading h3 {
-        font-size: 26px;
-    }
-
-    .streams-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .examination-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .academic-info-card {
-        padding: 22px;
-    }
-}
-/* Academic Overview - 4 Cards */
-.academic-overview {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 20px;
-    margin-bottom: 80px;
-}
-
-/* Tablet */
-@media (max-width: 1000px) {
-    .academic-overview {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
-
-/* Mobile */
-@media (max-width: 768px) {
-    .academic-overview {
-        grid-template-columns: 1fr;
-    }
-}
-/* =========================
-   FACILITIES SECTION
-========================= */
 
 .facilities-section {
     width: 100%;
+
     padding: 90px 20px;
+
     background: #ffffff;
 }
 
 .facilities-container {
     max-width: 1200px;
+
     margin: auto;
 }
 
 .facilities-heading {
     max-width: 800px;
+
     margin: 0 auto 65px;
+
     text-align: center;
 }
 
 .facilities-heading h2 {
     font-size: 40px;
+
     color: #173b66;
+
     margin-bottom: 18px;
 }
 
 .facilities-heading > p:last-child {
     color: #60758f;
+
     font-size: 16px;
+
     line-height: 1.7;
 }
 
@@ -1527,54 +1013,74 @@ footer {
 
 .category-heading {
     text-align: center;
+
     max-width: 700px;
+
     margin: 0 auto 40px;
 }
 
 .category-heading h3 {
     font-size: 32px;
+
     color: #173b66;
+
     margin-bottom: 12px;
 }
 
 .category-heading > p:last-child {
     color: #60758f;
+
     line-height: 1.7;
 }
 
 
-/* Facility Cards */
+/* =====================================================
+   FACILITY CARDS
+===================================================== */
 
 .facility-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .facility-card {
     background: #ffffff;
+
     border: 1px solid #e3e9ef;
+
     border-radius: 8px;
+
     overflow: hidden;
+
     transition: all 0.3s ease;
 }
 
 .facility-card:hover {
     transform: translateY(-6px);
+
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .facility-image {
     width: 100%;
+
     height: 210px;
+
     overflow: hidden;
 }
 
 .facility-image img {
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     object-fit: cover;
+
     transition: transform 0.4s ease;
 }
 
@@ -1588,68 +1094,94 @@ footer {
 
 .facility-icon {
     width: 48px;
+
     height: 48px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     margin-bottom: 15px;
+
     background: #eef4fa;
+
     color: #173b66;
+
     border-radius: 50%;
+
     font-size: 19px;
 }
 
 .facility-content h4 {
     font-size: 20px;
+
     color: #173b66;
+
     margin-bottom: 10px;
 }
 
 .facility-content p {
     color: #718096;
+
     font-size: 14px;
+
     line-height: 1.7;
 }
 
 
-/* =========================
-   SPORTS SECTION
-========================= */
+/* =====================================================
+   SPORTS
+===================================================== */
 
-/* =========================
-   SPORTS PHOTO CARDS
-========================= */
+.sports-category {
+    margin-top: 20px;
+}
 
 .sports-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 25px;
 }
 
 .sport-card {
     background: #ffffff;
+
     border: 1px solid #e3e9ef;
+
     border-radius: 8px;
+
     overflow: hidden;
+
     transition: all 0.3s ease;
 }
 
 .sport-card:hover {
     transform: translateY(-6px);
+
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .sport-image {
     width: 100%;
+
     height: 220px;
+
     overflow: hidden;
 }
 
 .sport-image img {
     width: 100%;
+
     height: 100%;
+
     display: block;
+
     object-fit: cover;
+
     transition: transform 0.4s ease;
 }
 
@@ -1659,42 +1191,151 @@ footer {
 
 .sport-content {
     padding: 20px;
+
     text-align: center;
 }
 
 .sport-content h4 {
     font-size: 20px;
+
     color: #173b66;
 }
 
 
-/* =========================
-   SPORTS RESPONSIVE
-========================= */
+/* =====================================================
+   GALLERY
+===================================================== */
+
+.gallery-preview {
+    max-width: 850px;
+
+    margin: 35px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 8px;
+}
+
+.gallery-preview img {
+    width: 100%;
+
+    display: block;
+
+    object-fit: cover;
+}
+
+.gallery-grid {
+    max-width: 1100px;
+
+    margin: 40px auto 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 8px;
+
+    transition: all 0.3s ease;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.02);
+}
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-details {
+    max-width: 700px;
+
+    margin: 35px auto 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+}
+
+.contact-details p {
+    color: #60758f;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+.contact-details i {
+    color: #173b66;
+
+    margin-right: 8px;
+
+    width: 20px;
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+    background: #173b66;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    padding: 25px;
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
 
 @media (max-width: 1000px) {
 
-    .sports-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 768px) {
-
-    .sports-grid {
-        grid-template-columns: 1fr;
+    .navbar {
+        padding: 10px 20px;
     }
 
-    .sport-image {
-        height: 220px;
+    .nav-links {
+        gap: 18px;
     }
-}
 
-/* =========================
-   FACILITIES RESPONSIVE
-========================= */
+    .nav-links a {
+        font-size: 14px;
+    }
 
-@media (max-width: 1000px) {
+    .school-name h1 {
+        font-size: 26px;
+    }
+
+    .hero-content h2 {
+        font-size: 52px;
+    }
+
+    .hero-content h3 {
+        font-size: 24px;
+    }
+
+    .academic-overview {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 
     .facility-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1703,10 +1344,263 @@ footer {
     .sports-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
+    .examination-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
 }
 
 
+/* =====================================================
+   MOBILE
+===================================================== */
+
 @media (max-width: 768px) {
+
+    /* Top Bar */
+
+    .top-bar {
+        height: auto;
+    }
+
+    .top-container {
+        padding: 8px 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        justify-content: center;
+
+        gap: 4px;
+
+        font-size: 11px;
+    }
+
+    .top-item {
+        white-space: normal;
+    }
+
+
+    /* Header */
+
+    .navbar {
+        min-height: auto;
+
+        padding: 15px;
+
+        flex-direction: row;
+
+        gap: 10px;
+    }
+
+    .school-logo {
+        width: 60px;
+
+        height: 60px;
+    }
+
+    .school-name h1 {
+        font-size: 22px;
+    }
+
+    .school-name p {
+        font-size: 12px;
+    }
+
+
+    /* Mobile Menu */
+
+    .menu-button {
+        display: block;
+
+        margin-left: auto;
+    }
+
+    .nav-links {
+        display: none;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        gap: 15px;
+
+        padding: 15px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        height: 650px;
+    }
+
+    .hero-image img {
+        object-position: center center;
+    }
+
+    .hero::after {
+        background: linear-gradient(
+            90deg,
+            rgba(18, 59, 101, 0.94),
+            rgba(22, 65, 109, 0.70)
+        );
+    }
+
+    .hero-content {
+        padding: 35px 25px;
+    }
+
+    .hero-label {
+        font-size: 11px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero-content h2 {
+        font-size: 40px;
+    }
+
+    .hero-content h3 {
+        font-size: 21px;
+    }
+
+    .hero-description {
+        font-size: 16px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+
+        width: 100%;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+
+    /* Features */
+
+    .features {
+        grid-template-columns: 1fr;
+
+        padding: 25px 20px;
+    }
+
+    .feature {
+        border-right: none;
+
+        border-bottom: 1px solid #e4e8ed;
+
+        padding: 20px;
+    }
+
+    .feature:last-child {
+        border-bottom: none;
+    }
+
+
+    /* General Sections */
+
+    .simple-section {
+        min-height: 350px;
+
+        padding: 65px 25px;
+    }
+
+    .simple-section h2 {
+        font-size: 30px;
+    }
+
+
+    /* About */
+
+    .about-section {
+        padding: 65px 20px;
+    }
+
+    .about-heading h2 {
+        font-size: 30px;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 280px;
+    }
+
+    .mission-section {
+        margin-top: 60px;
+
+        padding: 35px 25px;
+    }
+
+    .mission-content h3 {
+        font-size: 25px;
+    }
+
+    .mission-list {
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+    }
+
+    .why-school {
+        margin-top: 60px;
+    }
+
+    .why-heading h3 {
+        font-size: 25px;
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Academics */
+
+    .academics-section {
+        padding: 65px 20px;
+    }
+
+    .academics-heading h2 {
+        font-size: 30px;
+    }
+
+    .subsection-heading h3 {
+        font-size: 26px;
+    }
+
+    .academic-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .academic-info-card {
+        padding: 22px;
+    }
+
+    .examination-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Facilities */
 
     .facilities-section {
         padding: 65px 20px;
@@ -1731,4 +1625,65 @@ footer {
     .facility-image {
         height: 220px;
     }
+
+    .sport-image {
+        height: 220px;
+    }
+
+
+    /* Gallery */
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+
+        gap: 15px;
+    }
+
+    .gallery-grid img {
+        height: 220px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+    .school-name h1 {
+        font-size: 19px;
+    }
+
+    .school-name p {
+        font-size: 11px;
+    }
+
+    .school-logo {
+        width: 55px;
+
+        height: 55px;
+    }
+
+    .hero {
+        height: 600px;
+    }
+
+    .hero-content h2 {
+        font-size: 34px;
+    }
+
+    .hero-content h3 {
+        font-size: 19px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .simple-section h2 {
+        font-size: 27px;
+    }
+
 }
