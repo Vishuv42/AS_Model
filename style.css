@@ -14,9 +14,11 @@
     box-sizing: border-box;
 }
 
+
 html {
     scroll-behavior: smooth;
 }
+
 
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -39,6 +41,7 @@ body {
     align-items: center;
 }
 
+
 .top-container {
     width: 100%;
     max-width: 1200px;
@@ -55,9 +58,11 @@ body {
     font-size: 13px;
 }
 
+
 .top-item {
     white-space: nowrap;
 }
+
 
 .top-item i {
     margin-right: 6px;
@@ -75,6 +80,7 @@ header {
     position: relative;
     z-index: 100;
 }
+
 
 .navbar {
     width: 100%;
@@ -101,6 +107,7 @@ header {
     gap: 15px;
 }
 
+
 .school-logo {
     width: 78px;
     height: 78px;
@@ -112,12 +119,14 @@ header {
     overflow: hidden;
 }
 
+
 .school-logo img {
     width: 100%;
     height: 100%;
 
     object-fit: contain;
 }
+
 
 .school-name h1 {
     font-size: 30px;
@@ -126,6 +135,7 @@ header {
     line-height: 1.1;
     margin-bottom: 5px;
 }
+
 
 .school-name p {
     font-size: 16px;
@@ -146,6 +156,7 @@ header {
     list-style: none;
 }
 
+
 .nav-links a {
     text-decoration: none;
 
@@ -156,6 +167,7 @@ header {
 
     transition: all 0.3s ease;
 }
+
 
 .nav-links a:hover,
 .nav-links a.active {
@@ -213,6 +225,7 @@ header {
 
     overflow: hidden;
 }
+
 
 .hero-image img {
     width: 100%;
@@ -276,6 +289,7 @@ header {
     color: #ffffff;
 }
 
+
 .hero-label {
     font-size: 14px;
 
@@ -288,6 +302,7 @@ header {
     color: #ffffff;
 }
 
+
 .hero-content h2 {
     font-size: 62px;
 
@@ -298,9 +313,11 @@ header {
     color: #ffffff;
 }
 
+
 .hero-content h2 span {
     color: #f7b52c;
 }
+
 
 .hero-content h3 {
     font-size: 28px;
@@ -311,6 +328,7 @@ header {
 
     color: #ffffff;
 }
+
 
 .hero-description {
     font-size: 19px;
@@ -332,6 +350,7 @@ header {
 
     gap: 18px;
 }
+
 
 .hero-buttons .btn {
     display: inline-flex;
@@ -365,6 +384,7 @@ header {
     border: 2px solid #f7b52c;
 }
 
+
 .admission-btn:hover {
     background: #ffffff;
 
@@ -381,6 +401,7 @@ header {
 
     border: 2px solid #ffffff;
 }
+
 
 .explore-btn:hover {
     background: #ffffff;
@@ -407,6 +428,7 @@ header {
     box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.06);
 }
 
+
 .feature {
     text-align: center;
 
@@ -415,9 +437,11 @@ header {
     border-right: 1px solid #e4e8ed;
 }
 
+
 .feature:last-child {
     border-right: none;
 }
+
 
 .feature-icon {
     font-size: 30px;
@@ -427,6 +451,7 @@ header {
     margin-bottom: 10px;
 }
 
+
 .feature h3 {
     color: #173b66;
 
@@ -434,6 +459,7 @@ header {
 
     margin-bottom: 7px;
 }
+
 
 .feature p {
     color: #718096;
@@ -458,9 +484,11 @@ header {
     background: #ffffff;
 }
 
+
 .simple-section:nth-child(even) {
     background: #f5f8fc;
 }
+
 
 .simple-section h2 {
     font-size: 36px;
@@ -469,6 +497,7 @@ header {
 
     margin-bottom: 20px;
 }
+
 
 .simple-section > p:not(.section-label) {
     max-width: 750px;
@@ -510,6 +539,7 @@ header {
     padding: 90px 20px;
 }
 
+
 .about-container {
     max-width: 1200px;
 
@@ -525,6 +555,7 @@ header {
     margin-bottom: 55px;
 }
 
+
 .about-heading h2 {
     font-size: 40px;
 
@@ -532,6 +563,7 @@ header {
 
     margin-bottom: 15px;
 }
+
 
 .heading-line {
     width: 60px;
@@ -556,6 +588,7 @@ header {
     align-items: center;
 }
 
+
 .about-text {
     color: #60758f;
 
@@ -563,6 +596,7 @@ header {
 
     line-height: 1.8;
 }
+
 
 .about-intro {
     font-size: 18px;
@@ -582,6 +616,7 @@ header {
 
     border-radius: 8px;
 }
+
 
 .about-image img {
     width: 100%;
@@ -608,6 +643,7 @@ header {
     border-left: 4px solid #f7b52c;
 }
 
+
 .mission-content h3 {
     font-size: 30px;
 
@@ -615,6 +651,7 @@ header {
 
     margin-bottom: 35px;
 }
+
 
 .mission-list {
     display: grid;
@@ -624,6 +661,7 @@ header {
     gap: 25px 45px;
 }
 
+
 .mission-item {
     display: flex;
 
@@ -631,6 +669,7 @@ header {
 
     align-items: flex-start;
 }
+
 
 .mission-number {
     min-width: 42px;
@@ -654,6 +693,7 @@ header {
     font-weight: 700;
 }
 
+
 .mission-item p {
     color: #60758f;
 
@@ -669,17 +709,20 @@ header {
     margin-top: 90px;
 }
 
+
 .why-heading {
     text-align: center;
 
     margin-bottom: 45px;
 }
 
+
 .why-heading h3 {
     font-size: 30px;
 
     color: #173b66;
 }
+
 
 .why-grid {
     display: grid;
@@ -688,6 +731,7 @@ header {
 
     gap: 25px;
 }
+
 
 .why-card {
     padding: 32px 25px;
@@ -703,11 +747,13 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .why-card:hover {
     transform: translateY(-5px);
 
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 .why-icon {
     width: 55px;
@@ -731,6 +777,7 @@ header {
     font-size: 21px;
 }
 
+
 .why-card h4 {
     font-size: 18px;
 
@@ -738,6 +785,7 @@ header {
 
     margin-bottom: 10px;
 }
+
 
 .why-card p {
     color: #718096;
@@ -760,6 +808,7 @@ header {
     background: #f5f8fc;
 }
 
+
 .academics-container {
     max-width: 1200px;
 
@@ -777,6 +826,7 @@ header {
     text-align: center;
 }
 
+
 .academics-heading h2 {
     font-size: 40px;
 
@@ -784,6 +834,7 @@ header {
 
     margin-bottom: 18px;
 }
+
 
 .academics-heading > p:last-child {
     color: #60758f;
@@ -808,6 +859,7 @@ header {
     margin-bottom: 80px;
 }
 
+
 .academic-info-card {
     display: flex;
 
@@ -826,11 +878,13 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .academic-info-card:hover {
     transform: translateY(-4px);
 
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
 }
+
 
 .academic-icon {
     min-width: 55px;
@@ -852,6 +906,7 @@ header {
     font-size: 21px;
 }
 
+
 .academic-info-card h3 {
     font-size: 17px;
 
@@ -859,6 +914,7 @@ header {
 
     margin-bottom: 7px;
 }
+
 
 .academic-info-card p {
     font-size: 15px;
@@ -879,6 +935,7 @@ header {
     margin: 0 auto 40px;
 }
 
+
 .subsection-heading h3 {
     font-size: 32px;
 
@@ -886,6 +943,7 @@ header {
 
     margin-bottom: 12px;
 }
+
 
 .subsection-heading > p:last-child {
     color: #60758f;
@@ -902,6 +960,7 @@ header {
     padding-top: 10px;
 }
 
+
 .examination-grid {
     display: grid;
 
@@ -909,6 +968,7 @@ header {
 
     gap: 20px;
 }
+
 
 .exam-item {
     min-height: 150px;
@@ -931,6 +991,7 @@ header {
 
     border: 1px solid #e3e9ef;
 }
+
 
 .exam-item span {
     width: 38px;
@@ -956,6 +1017,7 @@ header {
     font-weight: 700;
 }
 
+
 .exam-item h4 {
     font-size: 15px;
 
@@ -977,11 +1039,13 @@ header {
     background: #ffffff;
 }
 
+
 .facilities-container {
     max-width: 1200px;
 
     margin: auto;
 }
+
 
 .facilities-heading {
     max-width: 800px;
@@ -991,6 +1055,7 @@ header {
     text-align: center;
 }
 
+
 .facilities-heading h2 {
     font-size: 40px;
 
@@ -998,6 +1063,7 @@ header {
 
     margin-bottom: 18px;
 }
+
 
 .facilities-heading > p:last-child {
     color: #60758f;
@@ -1007,9 +1073,11 @@ header {
     line-height: 1.7;
 }
 
+
 .facility-category {
     margin-bottom: 85px;
 }
+
 
 .category-heading {
     text-align: center;
@@ -1019,6 +1087,7 @@ header {
     margin: 0 auto 40px;
 }
 
+
 .category-heading h3 {
     font-size: 32px;
 
@@ -1026,6 +1095,7 @@ header {
 
     margin-bottom: 12px;
 }
+
 
 .category-heading > p:last-child {
     color: #60758f;
@@ -1046,6 +1116,7 @@ header {
     gap: 25px;
 }
 
+
 .facility-card {
     background: #ffffff;
 
@@ -1058,11 +1129,13 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .facility-card:hover {
     transform: translateY(-6px);
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 .facility-image {
     width: 100%;
@@ -1071,6 +1144,7 @@ header {
 
     overflow: hidden;
 }
+
 
 .facility-image img {
     width: 100%;
@@ -1084,13 +1158,16 @@ header {
     transition: transform 0.4s ease;
 }
 
+
 .facility-card:hover .facility-image img {
     transform: scale(1.05);
 }
 
+
 .facility-content {
     padding: 25px;
 }
+
 
 .facility-icon {
     width: 48px;
@@ -1114,6 +1191,7 @@ header {
     font-size: 19px;
 }
 
+
 .facility-content h4 {
     font-size: 20px;
 
@@ -1121,6 +1199,7 @@ header {
 
     margin-bottom: 10px;
 }
+
 
 .facility-content p {
     color: #718096;
@@ -1139,6 +1218,7 @@ header {
     margin-top: 20px;
 }
 
+
 .sports-grid {
     display: grid;
 
@@ -1146,6 +1226,7 @@ header {
 
     gap: 25px;
 }
+
 
 .sport-card {
     background: #ffffff;
@@ -1159,11 +1240,13 @@ header {
     transition: all 0.3s ease;
 }
 
+
 .sport-card:hover {
     transform: translateY(-6px);
 
     box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
+
 
 .sport-image {
     width: 100%;
@@ -1172,6 +1255,7 @@ header {
 
     overflow: hidden;
 }
+
 
 .sport-image img {
     width: 100%;
@@ -1185,15 +1269,18 @@ header {
     transition: transform 0.4s ease;
 }
 
+
 .sport-card:hover .sport-image img {
     transform: scale(1.05);
 }
+
 
 .sport-content {
     padding: 20px;
 
     text-align: center;
 }
+
 
 .sport-content h4 {
     font-size: 20px;
@@ -1216,6 +1303,7 @@ header {
     border-radius: 8px;
 }
 
+
 .gallery-preview img {
     width: 100%;
 
@@ -1223,6 +1311,7 @@ header {
 
     object-fit: cover;
 }
+
 
 .gallery-grid {
     max-width: 1100px;
@@ -1235,6 +1324,7 @@ header {
 
     gap: 20px;
 }
+
 
 .gallery-grid img {
     width: 100%;
@@ -1249,6 +1339,7 @@ header {
 
     transition: all 0.3s ease;
 }
+
 
 .gallery-grid img:hover {
     transform: scale(1.02);
@@ -1271,6 +1362,7 @@ header {
     gap: 15px;
 }
 
+
 .contact-details p {
     color: #60758f;
 
@@ -1278,6 +1370,7 @@ header {
 
     line-height: 1.7;
 }
+
 
 .contact-details i {
     color: #173b66;
