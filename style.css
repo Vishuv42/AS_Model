@@ -252,14 +252,12 @@ header {
 
     z-index: 1;
 
-    background: linear-gradient(
-        90deg,
-        rgba(18, 59, 101, 0.97) 0%,
-        rgba(22, 65, 109, 0.90) 25%,
-        rgba(27, 72, 119, 0.62) 48%,
-        rgba(27, 72, 119, 0.25) 70%,
-        rgba(27, 72, 119, 0.05) 100%
-    );
+    background: linear-gradient(90deg,
+            rgba(18, 59, 101, 0.97) 0%,
+            rgba(22, 65, 109, 0.90) 25%,
+            rgba(27, 72, 119, 0.62) 48%,
+            rgba(27, 72, 119, 0.25) 70%,
+            rgba(27, 72, 119, 0.05) 100%);
 }
 
 
@@ -499,7 +497,7 @@ header {
 }
 
 
-.simple-section > p:not(.section-label) {
+.simple-section>p:not(.section-label) {
     max-width: 750px;
 
     margin: auto;
@@ -836,7 +834,7 @@ header {
 }
 
 
-.academics-heading > p:last-child {
+.academics-heading>p:last-child {
     color: #60758f;
 
     font-size: 16px;
@@ -945,7 +943,7 @@ header {
 }
 
 
-.subsection-heading > p:last-child {
+.subsection-heading>p:last-child {
     color: #60758f;
 
     line-height: 1.7;
@@ -1065,7 +1063,7 @@ header {
 }
 
 
-.facilities-heading > p:last-child {
+.facilities-heading>p:last-child {
     color: #60758f;
 
     font-size: 16px;
@@ -1097,7 +1095,7 @@ header {
 }
 
 
-.category-heading > p:last-child {
+.category-heading>p:last-child {
     color: #60758f;
 
     line-height: 1.7;
@@ -1543,11 +1541,9 @@ footer {
     }
 
     .hero::after {
-        background: linear-gradient(
-            90deg,
-            rgba(18, 59, 101, 0.94),
-            rgba(22, 65, 109, 0.70)
-        );
+        background: linear-gradient(90deg,
+                rgba(18, 59, 101, 0.94),
+                rgba(22, 65, 109, 0.70));
     }
 
     .hero-content {
