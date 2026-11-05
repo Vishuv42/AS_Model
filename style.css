@@ -24,6 +24,9 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     color: #173b66;
     background: #ffffff;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
 }
 
 
@@ -1357,15 +1360,34 @@ header {
     border-radius: 8px;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(23, 59, 102, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: box-shadow 0.3s ease;
     background: #173b66;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
-.gallery-card:hover,
-.gallery-card:focus {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 28px rgba(23, 59, 102, 0.18);
-    outline: none;
+/* Only apply hover translation on devices that support real hover */
+@media (hover: hover) and (pointer: fine) {
+    .gallery-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(23, 59, 102, 0.18);
+    }
+
+    .gallery-card:hover img {
+        transform: scale(1.06);
+        opacity: 0.92;
+    }
+
+    .gallery-card:hover .gallery-card-caption i {
+        transform: scale(1.2);
+    }
+}
+
+.gallery-card:focus-visible {
+    outline: 3px solid #f7b52c;
+    outline-offset: 2px;
 }
 
 .gallery-card img {
@@ -1375,12 +1397,7 @@ header {
     display: block;
     border-radius: 8px;
     transition: transform 0.4s ease, opacity 0.3s ease;
-}
-
-.gallery-card:hover img,
-.gallery-card:focus img {
-    transform: scale(1.06);
-    opacity: 0.92;
+    pointer-events: none;
 }
 
 .gallery-card-caption {
@@ -1406,11 +1423,6 @@ header {
     transition: transform 0.3s ease;
 }
 
-.gallery-card:hover .gallery-card-caption i,
-.gallery-card:focus .gallery-card-caption i {
-    transform: scale(1.2);
-}
-
 /* =====================================================
    PHOTO GALLERY LIGHTBOX
 ===================================================== */
@@ -1425,22 +1437,27 @@ body.lightbox-open {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 99999;
-    background: rgba(10, 25, 47, 0.94);
+    z-index: 999999;
+    background: rgba(10, 25, 47, 0.96);
     backdrop-filter: blur(8px);
     -webkit-backdrop-filter: blur(8px);
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    pointer-events: none;
+    transition: opacity 0.28s ease, visibility 0.28s ease;
     user-select: none;
+    -webkit-user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .gallery-lightbox.active {
+    display: flex;
     opacity: 1;
     visibility: visible;
+    pointer-events: auto;
 }
 
 /* Close Button */
@@ -1448,8 +1465,8 @@ body.lightbox-open {
     position: absolute;
     top: 20px;
     right: 25px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
     width: 46px;
     height: 46px;
@@ -1459,7 +1476,9 @@ body.lightbox-open {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 100001;
+    z-index: 1000001;
+    pointer-events: auto;
+    touch-action: manipulation;
     transition: all 0.25s ease;
 }
 
@@ -1477,8 +1496,8 @@ body.lightbox-open {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     color: #ffffff;
     width: 52px;
     height: 52px;
@@ -1488,7 +1507,9 @@ body.lightbox-open {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 100001;
+    z-index: 1000001;
+    pointer-events: auto;
+    touch-action: manipulation;
     transition: all 0.25s ease;
 }
 
@@ -1643,6 +1664,7 @@ footer {
     max-width: 820px;
     margin: 0 auto;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .admissions-intro {
@@ -1661,6 +1683,8 @@ footer {
     text-align: left;
     box-shadow: 0 10px 30px rgba(23, 59, 102, 0.08);
     transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .enquiry-card:hover {
@@ -1671,15 +1695,20 @@ footer {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 22px 24px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .form-group.full-width {
     margin-top: 22px;
+    width: 100%;
 }
 
 .form-group label {
@@ -1687,9 +1716,11 @@ footer {
     font-weight: 700;
     color: #173b66;
     margin-bottom: 7px;
-    display: flex;
+    display: inline-flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 5px;
+    line-height: 1.4;
 }
 
 .form-group label .required {
@@ -1707,27 +1738,35 @@ footer {
     position: relative;
     display: flex;
     align-items: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .input-container .input-icon {
     position: absolute;
     left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #7d93ab;
     font-size: 15px;
     pointer-events: none;
     transition: color 0.25s ease;
+    z-index: 2;
 }
 
 .input-container.textarea-container .input-icon {
-    top: 14px;
+    top: 15px;
+    transform: none;
 }
 
 .input-container input,
 .input-container select,
 .input-container textarea {
     width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
     padding: 12px 14px 12px 42px;
-    font-size: 14.5px;
+    font-size: 15px;
     font-family: inherit;
     color: #173b66;
     background: #fbfcfe;
@@ -1735,22 +1774,28 @@ footer {
     border-radius: 6px;
     outline: none;
     transition: all 0.25s ease;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .input-container select {
     appearance: none;
     -webkit-appearance: none;
+    -moz-appearance: none;
     cursor: pointer;
     background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%237d93ab' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
     background-repeat: no-repeat;
     background-position: right 14px center;
     background-size: 16px;
+    background-color: #fbfcfe;
     padding-right: 38px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .input-container textarea {
     resize: vertical;
-    min-height: 100px;
+    min-height: 105px;
     line-height: 1.6;
 }
 
@@ -1768,9 +1813,6 @@ footer {
     box-shadow: 0 0 0 3px rgba(23, 59, 102, 0.12);
 }
 
-.input-container input:focus+.input-icon,
-.input-container select:focus+.input-icon,
-.input-container textarea:focus+.input-icon,
 .input-container:focus-within .input-icon {
     color: #173b66;
 }
@@ -1793,16 +1835,20 @@ footer {
     font-weight: 600;
     margin-top: 5px;
     min-height: 16px;
+    line-height: 1.35;
+    word-break: break-word;
     display: block;
 }
 
 /* Submit Area */
 .form-submit-wrap {
     margin-top: 25px;
+    width: 100%;
 }
 
 .admission-submit-btn {
     width: 100%;
+    min-height: 50px;
     background: #f7b52c;
     color: #173b66;
     border: 2px solid #f7b52c;
@@ -1816,6 +1862,8 @@ footer {
     justify-content: center;
     gap: 10px;
     transition: all 0.3s ease;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .admission-submit-btn:hover {
@@ -1824,25 +1872,34 @@ footer {
     border-color: #173b66;
 }
 
+.admission-submit-btn:active {
+    transform: scale(0.99);
+}
+
 .form-privacy-note {
     text-align: center;
     font-size: 12.5px;
+    line-height: 1.5;
     color: #7d93ab;
     margin-top: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
+    word-break: break-word;
+}
+
+.form-privacy-note i {
+    margin-right: 4px;
+    color: #173b66;
 }
 
 /* Success Message Box */
 .enquiry-success {
     text-align: center;
-    padding: 20px 10px;
+    padding: 24px 14px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .enquiry-success .success-icon-wrap {
@@ -1853,6 +1910,7 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-shrink: 0;
 }
 
 .enquiry-success .success-icon-wrap i {
@@ -1872,20 +1930,34 @@ footer {
     line-height: 1.7;
     max-width: 620px;
     margin: 0 auto;
+    word-break: break-word;
 }
 
 .enquiry-success .success-notice {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
     background: #f3f6fa;
     border: 1px dashed #b7c8dc;
     border-radius: 6px;
-    padding: 10px 16px;
+    padding: 11px 16px;
     font-size: 13px;
+    line-height: 1.5;
     color: #486581;
     margin-top: 6px;
     text-align: left;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.enquiry-success .success-notice i {
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+
+.enquiry-success .success-notice span {
+    flex: 1;
+    word-break: break-word;
 }
 
 .enquiry-success .reset-enquiry-btn {
@@ -1894,14 +1966,17 @@ footer {
     color: #ffffff;
     border: 2px solid #173b66;
     border-radius: 6px;
-    padding: 11px 24px;
-    font-size: 14px;
+    padding: 12px 24px;
+    min-height: 46px;
+    font-size: 14.5px;
     font-weight: 700;
     cursor: pointer;
     display: inline-flex;
     align-items: center;
+    justify-content: center;
     gap: 8px;
     transition: all 0.3s ease;
+    touch-action: manipulation;
 }
 
 .enquiry-success .reset-enquiry-btn:hover {
@@ -2128,14 +2203,17 @@ footer {
         font-size: 30px;
     }
 
-    /* Admissions Section (Mobile) */
+    /* Admissions Section (Tablet & Mobile) */
 
     .admissions-section {
-        padding: 50px 18px;
+        padding: 55px 20px;
     }
 
     .enquiry-card {
-        padding: 26px 18px;
+        padding: 28px 22px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
 
     .form-grid {
@@ -2148,8 +2226,9 @@ footer {
     }
 
     .admission-submit-btn {
-        font-size: 15px;
+        font-size: 16px;
         padding: 13px 20px;
+        min-height: 48px;
     }
 
 
@@ -2320,7 +2399,154 @@ footer {
 
 
 /* =====================================================
-   SMALL MOBILE
+   MOBILE (BELOW 600px)
+===================================================== */
+
+@media (max-width: 600px) {
+
+    /* Admissions Section */
+    .admissions-section {
+        padding: 45px 16px;
+    }
+
+    .admissions-container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .admissions-intro {
+        font-size: 14.5px;
+        line-height: 1.6;
+        margin: 0 auto 24px auto;
+        padding: 0 4px;
+    }
+
+    .enquiry-card {
+        padding: 22px 16px;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 4px 18px rgba(23, 59, 102, 0.08);
+    }
+
+    /* Single-column field layout on screens below 600px */
+    .form-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .form-group {
+        width: 100%;
+    }
+
+    .form-group.full-width {
+        margin-top: 15px;
+        width: 100%;
+    }
+
+    .form-group label {
+        font-size: 13.5px;
+        margin-bottom: 6px;
+        line-height: 1.4;
+    }
+
+    .input-container {
+        width: 100%;
+    }
+
+    /* 16px font-size prevents iOS browser viewport auto-zoom */
+    .input-container input,
+    .input-container select,
+    .input-container textarea {
+        font-size: 16px;
+        min-height: 48px;
+        padding: 12px 14px 12px 42px;
+        border-radius: 6px;
+        width: 100%;
+    }
+
+    .input-container textarea {
+        min-height: 95px;
+        padding-top: 12px;
+        line-height: 1.5;
+    }
+
+    .form-error {
+        font-size: 12px;
+        margin-top: 4px;
+        line-height: 1.35;
+    }
+
+    .form-submit-wrap {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .admission-submit-btn {
+        width: 100%;
+        min-height: 48px;
+        font-size: 16px;
+        padding: 13px 18px;
+        border-radius: 6px;
+    }
+
+    .form-privacy-note {
+        font-size: 11.5px;
+        line-height: 1.5;
+        margin-top: 14px;
+        padding: 0 4px;
+    }
+
+    /* Success message layout */
+    .enquiry-success {
+        padding: 16px 4px;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .enquiry-success .success-icon-wrap {
+        width: 58px;
+        height: 58px;
+    }
+
+    .enquiry-success .success-icon-wrap i {
+        font-size: 32px;
+    }
+
+    .enquiry-success h3 {
+        font-size: 20px;
+        line-height: 1.3;
+    }
+
+    .enquiry-success .success-details {
+        font-size: 13.5px;
+        line-height: 1.6;
+        padding: 0;
+    }
+
+    .enquiry-success .success-notice {
+        padding: 10px 12px;
+        font-size: 12px;
+        border-radius: 6px;
+    }
+
+    .enquiry-success .reset-enquiry-btn {
+        width: 100%;
+        min-height: 48px;
+        padding: 12px 18px;
+        font-size: 14.5px;
+        justify-content: center;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE (320px - 480px)
 ===================================================== */
 
 @media (max-width: 480px) {
@@ -2335,7 +2561,6 @@ footer {
 
     .school-logo {
         width: 55px;
-
         height: 55px;
     }
 
@@ -2356,15 +2581,104 @@ footer {
     }
 
     .simple-section h2 {
-        font-size: 27px;
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    /* Admissions on small phones (320px - 480px) */
+    .admissions-section {
+        padding: 38px 12px;
     }
 
     .enquiry-card {
-        padding: 20px 14px;
+        padding: 18px 12px;
+        border-radius: 8px;
+    }
+
+    .form-grid {
+        gap: 13px;
+    }
+
+    .form-group.full-width {
+        margin-top: 13px;
+    }
+
+    .form-group label {
+        font-size: 13px;
+    }
+
+    .input-container input,
+    .input-container select,
+    .input-container textarea {
+        font-size: 16px;
+        padding: 11px 12px 11px 38px;
+    }
+
+    .input-container .input-icon {
+        left: 12px;
+        font-size: 14px;
+    }
+
+    .input-container select {
+        background-position: right 12px center;
+        padding-right: 34px;
+    }
+
+    .admission-submit-btn {
+        font-size: 15px;
+        padding: 12px 14px;
+        min-height: 48px;
     }
 
     .enquiry-success h3 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .enquiry-success .success-details {
+        font-size: 13px;
+    }
+
+    .enquiry-success .success-notice {
+        font-size: 11.5px;
+        padding: 8px 10px;
+    }
+
+    .enquiry-success .reset-enquiry-btn {
+        font-size: 14px;
+        padding: 11px 14px;
+    }
+
+    /* Lightbox on small screens (320px - 480px) */
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 42px;
+        height: 42px;
+        font-size: 18px;
+    }
+
+    .lightbox-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+
+    .lightbox-prev {
+        left: 6px;
+    }
+
+    .lightbox-next {
+        right: 6px;
+    }
+
+    .lightbox-figure img {
+        max-width: 95vw;
+        max-height: 60vh;
+    }
+
+    .lightbox-caption-bar {
+        padding: 8px 12px;
+        font-size: 12.5px;
     }
 
 }
